@@ -141,10 +141,14 @@ find_package(Threads REQUIRED QUIET)
 add_executable(tester test/tester.cpp)
 add_executable(benchmark test/benchmark.c)
 add_executable(primes_benchmark test/primes_benchmark.cpp)
+add_executable(multi_file test/multi_file/lib.cpp test/multi_file/main.cpp)
 
 target_include_directories(tester PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(benchmark PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(primes_benchmark PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(multi_file PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+
+set_target_properties(multi_file PROPERTIES COMPILE_FLAGS "-Wall")
 
 target_link_libraries(tester Threads::Threads)
 
