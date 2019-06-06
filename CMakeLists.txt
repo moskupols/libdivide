@@ -148,7 +148,7 @@ target_include_directories(benchmark PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(primes_benchmark PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 target_include_directories(multi_file PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
 
-set_target_properties(multi_file PROPERTIES COMPILE_FLAGS "-Wall")
+set_target_properties(multi_file PROPERTIES COMPILE_FLAGS "-Wall -Wextra")
 
 target_link_libraries(tester Threads::Threads)
 
