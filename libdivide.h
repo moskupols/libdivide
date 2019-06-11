@@ -98,6 +98,7 @@
 
 #ifdef __cplusplus
 namespace libdivide {
+inline namespace v_1_2 {
 #endif
 
 // Explanation of "more" field: bit 6 is whether to use shift path. If we are
@@ -2842,6 +2843,7 @@ T operator/=(T& numer, const divider<T, ALGO>& denom) {
     }
 #endif
 
+} // inline namespace v_1_2
 } // namespace libdivide
 
 #endif // __cplusplus
